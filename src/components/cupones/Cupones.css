@@ -1,0 +1,23 @@
+html,body {
+    height: 100%;
+}
+
+.btn-dropdown {
+    background-color: white !important;
+    border-color: white !important;
+    float: right !important;
+}
+
+.btn-dropdown2{
+    background-color: white !important;
+    border-color: white !important;
+    float: right !important;
+}
+
+.text-dropdown {
+    color: #260a81 !important
+}
+
+.imagen_coupon{
+    width: 100px;
+}
