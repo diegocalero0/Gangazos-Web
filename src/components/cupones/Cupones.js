@@ -320,6 +320,7 @@ class Cupones extends Component{
                             <th scope="col">Descripción</th>
                             <th scope="col">Inicio</th>
                             <th scope="col">Fin</th>
+                            <th scope="col">Veces obtenido</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -332,6 +333,7 @@ class Cupones extends Component{
                                         <td>{coupon.descripcion}</td>
                                         <td>{new Date(coupon.inicio.seconds * 1000).toDateString()}</td>
                                         <td>{new Date(coupon.fin.seconds * 1000).toDateString()}</td>
+                                        <td>{coupon.obtenido}</td>
                                     </tr>
                                 )
                             })}
