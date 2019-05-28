@@ -37,22 +37,22 @@ class NavBar extends Component{
                             <li className="nav-item active">
                                 <a className="nav-link" href="" onClick = {() => {
                                     this.setState({redirect: true, to: '/cupones'})
-                                }}>Cupones <span className="sr-only">(current)</span></a>
+                                }}>Cupones</a>
                             </li>
                             <li className="nav-item active">
                                 <a className="nav-link" href="" onClick = {() => {
                                     this.setState({redirect: true, to: '/ciudades'})
-                                }}>Ciudades <span className="sr-only">(current)</span></a>
+                                }}>Ciudades</a>
                             </li>
                             <li className="nav-item active">
                                 <a className="nav-link" href="" onClick = {() => {
                                     this.setState({redirect: true, to: '/tiendas'})
-                                }}>Tiendas <span className="sr-only">(current)</span></a>
+                                }}>Tiendas</a>
                             </li>
                             <li className="nav-item active">
                                 <a className="nav-link" href="" onClick = {() => {
                                     this.setState({redirect: true, to: '/categorias'})
-                                }}>Categorias <span className="sr-only">(current)</span></a>
+                                }}>Categorias</a>
                             </li>
                         </ul>
                         <button className="btn btn-light my-2 my-sm-0"

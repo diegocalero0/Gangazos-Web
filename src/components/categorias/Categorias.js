@@ -45,8 +45,6 @@ class Categorias extends Component{
             disponibility: 'Todos',
             shops: [],
             shopSelected: '',
-            branches: [],
-            branchSelected: '',
             coupons: [],
             showModal: false,
             categories: [],
@@ -77,7 +75,8 @@ class Categorias extends Component{
                 categories.push(category);
                 
             });
-
+            if(categories.length)
+                this.setState({categorySelected: categories[0].id})
             this.setState({categories})
 
         }, err => {
@@ -134,6 +133,22 @@ class Categorias extends Component{
         db.collection('categorias').doc(this.state.categorySelected).collection('subcategorias').add(subCategory)
     }
 
+    deleteCategory(categoryId){
+        db.collection("categorias").doc(categoryId).delete().then(function() {
+            console.log("Document successfully deleted!");
+        }).catch(function(error) {
+            console.error("Error removing document: ", error);
+        });
+    }
+
+    deleteSubCategory(subCategoryId){
+        db.collection("categorias").doc(this.state.categorySelected).collection('subcategorias').doc(subCategoryId).delete().then(function() {
+            console.log("Document successfully deleted!");
+        }).catch(function(error) {
+            console.error("Error removing document: ", error);
+        });
+    }
+
     render(){
 
         if(!this.state.check)
@@ -143,7 +158,7 @@ class Categorias extends Component{
         return(
 
             <div>
-                <NavBar logOut = {this.logOut} to = {'/ciudades'}/>
+                <NavBar logOut = {this.logOut} to = {'/categorias'}/>
                 <div className = "container-fluid mt-2">
 
                     {
@@ -171,17 +186,46 @@ class Categorias extends Component{
                                 <thead className="thead-light">
                                     <tr>
                                         <th scope="col">Nombre</th>
+                                        <th scope="col">Eliminar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {this.state.categories.map((category, index) => {
                                         return (
                                             
-                                                <tr>
-                                                    <button
+                                                <tr style = {{backgroundColor: this.state.categorySelected == category.id ? '#F3F3F3' : 'white'}}>
+                                                    <a
                                                         class = "btn-block btn" onClick = {() => {this.loadSubCategories(category.id); this.setState({categorySelected: category.id})}}>
                                                         <td>{category.nombre}</td>
-                                                    </button>
+                                                    </a>
+                                                    <td>
+                                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target={"#" + category.id}>
+                                                                Eliminar
+                                                            </button>
+
+                                                            <div class="modal fade" id={category.id} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog" role="document">
+                                                                    <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLabel">Eliminar categoría</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <p>Está seguro de eliminar la categoría:</p>
+                                                                        <p>{category.nombre}</p>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                                        <button type="button" class="btn btn-danger" data-dismiss="modal" onClick = {() => {
+                                                                            this.deleteCategory(category.id)
+                                                                        }}>Eliminar</button>
+                                                                    </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                    </td>
                                                 </tr>
                                         )
                                     })}
@@ -203,6 +247,7 @@ class Categorias extends Component{
                                 <thead className="thead-light">
                                     <tr>
                                         <th scope="col">Nombre</th>
+                                        <th scope="col">Eliminar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -210,6 +255,34 @@ class Categorias extends Component{
                                         return (
                                             <tr>
                                                 <td>{category.nombre}</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target={"#" + category.id}>
+                                                        Eliminar
+                                                    </button>
+
+                                                    <div class="modal fade" id={category.id} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Eliminar subcategoría</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <p>Está seguro de eliminar la subcategoría:</p>
+                                                                <p>{category.nombre}</p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal" onClick = {() => {
+                                                                    this.deleteSubCategory(category.id)
+                                                                }}>Eliminar</button>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    </td>
                                             </tr>
                                         )
                                     })}

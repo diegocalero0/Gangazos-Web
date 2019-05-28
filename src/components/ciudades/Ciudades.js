@@ -68,7 +68,9 @@ class Ciudades extends Component{
         db.collection('ciudades').orderBy('nombre').onSnapshot((querySnapshot) => {
             var cities = [];
             querySnapshot.forEach((doc) => {
-                cities.push(doc.data());
+                let city = doc.data();
+                city.id = doc.id
+                cities.push(city);
             });
 
             this.setState({cities})
@@ -93,6 +95,14 @@ class Ciudades extends Component{
         }
 
         db.collection('ciudades').add(city)
+    }
+
+    deleteCity(id){
+        db.collection("ciudades").doc(id).delete().then(function() {
+            console.log("Document successfully deleted!");
+        }).catch(function(error) {
+            console.error("Error removing document: ", error);
+        });
     }
 
     render(){
@@ -130,13 +140,43 @@ class Ciudades extends Component{
                         <thead className="thead-light">
                             <tr>
                                 <th scope="col">Nombre</th>
+                                <th scope="col">Eliminar</th>
                             </tr>
                         </thead>
                         <tbody>
                             {this.state.cities.map((city, index) => {
                                 return (
                                     <tr>
-                                        <td>{city.nombre}</td>
+                                        <td class = "col-8">{city.nombre}</td>
+                                        
+                                        <td>
+                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target={"#" + city.id}>
+                                                Eliminar
+                                            </button>
+                                            <div class="modal fade" id={city.id} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Eliminar ciudad</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>Está seguro de eliminar la ciudad:</p>
+                                                        <p>{city.nombre}</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal" onClick = {() => {
+                                                            this.deleteCity(city.id)
+                                                        }}>Eliminar</button>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                       
                                     </tr>
                                 )
                             })}

@@ -174,8 +174,6 @@ class Modal extends Component{
     validar(){
         let coupon = this.state.coupon;
 
-        alert(JSON.stringify(coupon))
-
         if(coupon.categoria.trim() == ''
         || coupon.ciudad.trim() == ''
         || coupon.descripcion.trim() == ''

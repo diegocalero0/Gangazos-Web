@@ -226,6 +226,14 @@ class Cupones extends Component{
         
     }
 
+    deleteCoupon(id){
+        db.collection("cupones").doc(id).delete().then(function() {
+            console.log("Document successfully deleted!");
+        }).catch(function(error) {
+            console.error("Error removing document: ", error);
+        });
+    }
+
     render(){
 
         if(!this.state.check)
@@ -314,26 +322,57 @@ class Cupones extends Component{
                         <thead className="thead-light">
                             <tr>
 
-                            <th scope="col">QR</th>
+                            
                             <th scope="col">Imagen</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Descripción</th>
                             <th scope="col">Inicio</th>
                             <th scope="col">Fin</th>
                             <th scope="col">Veces obtenido</th>
+                            <th scope="col">Eliminar</th>
                             </tr>
                         </thead>
                         <tbody>
                             {this.state.coupons.map((coupon, index) => {
                                 return (
                                     <tr>
-                                        <th scope="row"><QRCode size = {100} value={coupon.id} /></th>
                                         <td><img src = {coupon.imagen} className = "imagen_coupon"/></td>
                                         <td>{coupon.nombre}</td>
                                         <td>{coupon.descripcion}</td>
                                         <td>{new Date(coupon.inicio.seconds * 1000).toDateString()}</td>
                                         <td>{new Date(coupon.fin.seconds * 1000).toDateString()}</td>
                                         <td>{coupon.obtenido}</td>
+                                        <td>
+
+                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target={"#" + coupon.id}>
+                                                Eliminar
+                                            </button>
+
+                                            <div class="modal fade" id={coupon.id} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Eliminar cupón</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>Está seguro de eliminar el cupón:</p>
+                                                        <p>{coupon.nombre}</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal" onClick = {() => {
+                                                            this.deleteCoupon(coupon.id)
+                                                        }}>Eliminar</button>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                            
+                            
                                     </tr>
                                 )
                             })}
