@@ -18,7 +18,7 @@ class Login extends Component{
 
     render(){
         return(
-            <div className = "container d-flex justify-content-center vertical-center flex-column">
+            <div className = "container d-flex justify-content-center flex-column">
 
                 <img src = {name} className = "name"/>
 
@@ -26,141 +26,113 @@ class Login extends Component{
                     Politicas de privacidad
                 </h1>
 
-                <p  align="justify">
-                Gangazos puede solicitar datos personales de usuarios al acceder a
-aplicaciones de la empresa o de otras empresas afiliadas así como la
-posibilidad de que entre estas empresas puedan compartir esos datos
-para mejorar los productos y servicios ofrecidos. Si no se facilitan esos
-datos personales, en muchos casos no podremos ofrecer los productos o
-servicios solicitados.
-Estos son algunos ejemplos de las categorías de datos de carácter
-personal que Gangazos puede recoger y la finalidad para los que
-puede llevar a cabo el tratamiento de estos datos.
-¿Qué datos de carácter personal se pueden recopilar?
-● Al crear un ID, solicitar un crédito comercial, comprar un producto,
-descargar una actualización de software, se recopilan diferentes
-datos, como nombre, dirección postal, número de teléfono,
-dirección de correo electrónico o los datos de la tarjeta de crédito.
-● Cuando se comparten contenidos con familiares y amigos o se
-invita a otras personas a participar en los servicios o foros,
-pueden recogerse los datos que facilitamos sobre esas personas,
-como su nombre, domicilio, correo electrónico y número de
-teléfono. Se utilizarán dichos datos para completar sus pedidos,
-mostrarle el producto o servicio correspondiente o para combatir
-el fraude.
-Propósito del tratamiento de datos de carácter personal
-Gangazos podrá utilizar los datos personales recabados para:
-● Los datos de carácter personal recopilados permiten mantenerle
-informado acerca de los últimos productos, las actualizaciones
-de software disponibles y los próximos eventos.
-● También se utilizan los datos de carácter personal como ayuda
-para elaborar, perfeccionar, gestionar,
-proporcionar y mejorar los productos, servicios, contenidos y
-publicidad, y con el propósito de evitar pérdidas y fraudes.
-● Pueden utilizarse los datos de carácter personal para
-comprobar la identidad, colaborar en la identificación de
-usuarios y decidir los servicios apropiados.
-● También se utilizan esos datos de carácter personal
-con propósitos internos, incluyendo auditorías, análisis de datos
-y sondeos, para mejorar los productos, servicios y
-comunicaciones a clientes.
-● Si participa en un sorteo, un concurso o una promoción, pueden
-usarse los datos proporcionados para administrar estos
-programas.
-Recopilación y tratamiento de datos de carácter no
-personal
-Gangazos también recopilará datos de un modo que, por sí
-mismos, no pueden ser asociados directamente a una persona
-determinada. Estos datos de carácter no personal se pueden recopilar,
-tratar, transferir y publicar con cualquier intención. Estos son algunos
-ejemplos de las clases de datos de carácter no personal que
-Gangazos puede recopilar y los fines para los que se realiza su
-tratamiento:
-● Datos tales como profesión, idioma, código postal, identificador
-único de dispositivo, etc. para comprender mejor la conducta de
-nuestros clientes y mejorar nuestros productos, servicios y
-anuncios publicitarios.
-● Datos sobre cómo se usan determinados servicios, incluidas las
-consultas de búsqueda. Esta información se puede utilizar para
-incrementar la importancia de los resultados que aportan los
-servicios ofrecidos.
-● Datos sobre cómo usa su dispositivo y las aplicaciones para
-facilitar a los desarrolladores la mejora de esas aplicaciones.
-Si juntamos datos de carácter no personal con datos personales, los
-datos mezclados serán tratados como datos personales mientras sigan
-estando combinados.
-Divulgación a terceros
-Ocasionalmente Gangazos puede facilitar determinados datos de
-carácter personal a socios estratégicos que trabajen con nosotros para
-proveer productos y servicios o nos ayudan en nuestras actividades de
-marketing. No se compartirán los datos con ningún tercero para sus
-propios fines de marketing.
-Proveedores de servicios
-Gangazos compartirá datos de carácter personal con empresas que
-se ocupan, entre otras actividades, de prestar servicios de tratamiento
-de datos, conceder créditos, tramitar pedidos de clientes, presentar sus
-productos, mejorar datos de clientes, suministrar servicios de atención al
-cliente, evaluar su interés en productos y servicios y realizar
-investigaciones sobre clientes o su grado de satisfacción.
-Otros terceros
-Es posible que Gangazos divulgue datos de carácter personal
-por mandato legal, en el marco de un proceso judicial o por petición de
-una autoridad pública, tanto dentro como fuera de su país de residencia.
-Igualmente se puede publicar información personal si es necesaria o
-conveniente por motivos de seguridad nacional, para acatar la legislación
-vigente o por otras razones relevantes de orden público.
-Protección de datos de carácter personal
-Gangazos garantizará la protección de los datos personales
-mediante cifrado durante el tránsito y, los alojados en instalaciones,
-con medidas de seguridad físicas.
-Al usar ciertos productos, servicios o aplicaciones o al publicar
-opiniones en foros, salas de chat o redes sociales, el contenido y los
-datos de carácter personal que se comparta serán visible para otros
-usuarios, que tendrán la posibilidad de leerlos, compilarlos o usarlos.
-Usted será responsable de los datos de carácter personal que
-distribuya o proporcione en estos casos.
-Integridad y conservación de datos de carácter personal
-Gangazos garantizará la exactitud y la calidad de los datos
-personales, se conservarán durante el tiempo necesario para cumplir los
-fines para los que fueron recabados, salvo que la ley exija conservarlos
-durante más tiempo.
-Acceso a los datos de carácter personal
-Respecto a los datos de carácter personal que conservamos,
-Gangazos le ofrece acceso a ellos para cualquier fin, incluyendo las
-solicitudes de rectificación en caso de que sean incorrectos o de
-eliminación en caso de no estar obligados a conservarlos por imperativo
-legal o por razones legítimas de negocio. Nos reservamos el derecho a
-no tramitar aquellas solicitudes que sean improcedentes o vejatorias,
-que pongan en riesgo la privacidad de terceros, que resulten inviables o
-para las que la legislación local no exija derecho de acceso. Las
-solicitudes de acceso, rectificación o eliminación podrán enviarse a
-nuestra dirección XXDIRECCIONXX o en la cuenta de correo electrónico
-XXMAILXX
-Niños y educación
-Gangazos es consciente de la necesidad de establecer precauciones
-adicionales para preservar la privacidad y la seguridad de los menores
-que utilizan las aplicaciones y exigir consentimiento de sus progenitores
-en caso de que no tengan la edad mínima exigida por la legislación (en
-España, 14 años).
-Si se han recopilado datos personales de un menor de 14 años, sin el
-consentimiento necesario, se debe eliminar esa información lo antes
-posible.
-Servicios de localización
-Para prestar servicios de localización Gangazos podrá reunir,
-utilizar y compartir datos exactos sobre ubicaciones, incluyendo la
-situación geográfica en tiempo real de su ordenador o de su dispositivo.
-Salvo que nos den su consentimiento, estos datos de localización se
-recogen de manera anónima de forma que no pueden utilizarse para
-identificarlo personalmente, y son usados para suministrar y mejorar sus
-productos y servicios de localización.
-Páginas web y servicios de terceros
-Las aplicaciones pueden contener enlaces a páginas web, productos y
-servicios de terceros. También pueden utilizar u ofrecer productos o
-servicios de terceros. La recogida de datos por parte de terceros,
-introduciendo de datos sobre ubicaciones geográficas o datos de
-contacto, se guiará por sus respectivas políticas de privacidad. Le
-recomendamos consultar las políticas de privacidad de esos terceros.
-                </p>
+                <p>
+                    Gonzalo Zuniga Asmar built the Gangazos app as
+                    a Free app. This SERVICE is provided by
+                    Gonzalo Zuniga Asmar at no cost and is intended for
+                    use as is.
+                  </p> <p>
+                    This page is used to inform visitors regarding
+                    my policies with the collection, use, and
+                    disclosure of Personal Information if anyone decided to use
+                    my Service.
+                  </p> <p>
+                    If you choose to use my Service, then you agree
+                    to the collection and use of information in relation to this
+                    policy. The Personal Information that I collect is
+                    used for providing and improving the Service.
+                    I will not use or share your
+                    information with anyone except as described in this Privacy
+                    Policy.
+                  </p> <p>
+                    The terms used in this Privacy Policy have the same meanings
+                    as in our Terms and Conditions, which is accessible at
+                    Gangazos unless otherwise defined in this Privacy
+                    Policy.
+                  </p> <p><strong>Information Collection and Use</strong></p> <p>
+                    For a better experience, while using our Service,
+                    I may require you to provide us with certain
+                    personally identifiable information. The
+                    information that I request will be
+                    retained on your device and is not collected by me in any way.
+                  </p> <p>
+                    The app does use third party services that may collect
+                    information used to identify you.
+                  </p> <div><p>
+                      Link to privacy policy of third party service providers
+                      used by the app
+                    </p> <ul><li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li></ul></div> <p><strong>Log Data</strong></p> <p>
+                    I want to inform you that whenever
+                    you use my Service, in a case of an error in the
+                    app I collect data and information (through third
+                    party products) on your phone called Log Data. This Log Data
+                    may include information such as your device Internet
+                    Protocol (“IP”) address, device name, operating system
+                    version, the configuration of the app when utilizing
+                    my Service, the time and date of your use of the
+                    Service, and other statistics.
+                  </p> <p><strong>Cookies</strong></p> <p>
+                    Cookies are files with a small amount of data that are
+                    commonly used as anonymous unique identifiers. These are
+                    sent to your browser from the websites that you visit and
+                    are stored on your device's internal memory.
+                  </p> <p>
+                    This Service does not use these “cookies” explicitly.
+                    However, the app may use third party code and libraries that
+                    use “cookies” to collect information and improve their
+                    services. You have the option to either accept or refuse
+                    these cookies and know when a cookie is being sent to your
+                    device. If you choose to refuse our cookies, you may not be
+                    able to use some portions of this Service.
+                  </p> <p><strong>Service Providers</strong></p> <p>
+                    I may employ third-party companies
+                    and individuals due to the following reasons:
+                  </p> <ul><li>To facilitate our Service;</li> <li>To provide the Service on our behalf;</li> <li>To perform Service-related services; or</li> <li>To assist us in analyzing how our Service is used.</li></ul> <p>
+                    I want to inform users of this
+                    Service that these third parties have access to your
+                    Personal Information. The reason is to perform the tasks
+                    assigned to them on our behalf. However, they are obligated
+                    not to disclose or use the information for any other
+                    purpose.
+                  </p> <p><strong>Security</strong></p> <p>
+                    I value your trust in providing us
+                    your Personal Information, thus we are striving to use
+                    commercially acceptable means of protecting it. But remember
+                    that no method of transmission over the internet, or method
+                    of electronic storage is 100% secure and reliable, and
+                    I cannot guarantee its absolute security.
+                  </p> <p><strong>Links to Other Sites</strong></p> <p>
+                    This Service may contain links to other sites. If you click
+                    on a third-party link, you will be directed to that site.
+                    Note that these external sites are not operated by
+                    me. Therefore, I strongly advise you to
+                    review the Privacy Policy of these websites.
+                    I have no control over and assume no
+                    responsibility for the content, privacy policies, or
+                    practices of any third-party sites or services.
+                  </p> <p><strong>Children’s Privacy</strong></p> <p>
+                    These Services do not address anyone under the age of 13.
+                    I do not knowingly collect personally
+                    identifiable information from children under 13. In the case
+                    I discover that a child under 13 has provided
+                    me with personal information,
+                    I immediately delete this from our servers. If you
+                    are a parent or guardian and you are aware that your child
+                    has provided us with personal information, please contact
+                    me so that I will be able to do
+                    necessary actions.
+                  </p> <p><strong>Changes to This Privacy Policy</strong></p> <p>
+                    I may update our Privacy Policy from
+                    time to time. Thus, you are advised to review this page
+                    periodically for any changes. I will
+                    notify you of any changes by posting the new Privacy Policy
+                    on this page. These changes are effective immediately after
+                    they are posted on this page.
+                  </p> <p><strong>Contact Us</strong></p> <p>
+                    If you have any questions or suggestions about
+                    my Privacy Policy, do not hesitate to contact
+                    me at gonzaloz21@gmail.com.
+                  </p>
             </div>
         )
     }
