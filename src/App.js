@@ -7,6 +7,7 @@ import Cupon from './components/cupon/Cupon'
 import Ciudades from './components/ciudades/Ciudades'
 import Tiendas from './components/tiendas/Tiendas'
 import Categorias from './components/categorias/Categorias'
+import Politicas from './components/politicas/Politicas'
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -20,6 +21,7 @@ class App extends Component{
         <Route path="/ciudades/" component={Ciudades} />
         <Route path="/tiendas/" component={Tiendas} />
         <Route path="/categorias/" component={Categorias} />
+        <Route path="/politicas/" component={Politicas} />
       </Router>
     );
   }
